@@ -68,7 +68,7 @@ React Native 的热更新更像原生 App 的版本更新，需要实现一套�
 ### 部署方案
 - [服务器](./code-push-server.md)
 - [发布端](./code-push.md)
-- [热更新插件](./react-native-code-push.md)
+- [客户端插件](./react-native-code-push.md)
 
 ## 参考
 - [React Native使用Code Push热更新完整解决方案](https://wddsss.com/main/displayArticle/267)
