@@ -4,7 +4,7 @@
 
 热更新作为 React Native 的优势之一，相信很多人在选择使用 React Native 来开发应用，也是因为 React Native 具有的热更新特性。在热更新方案中，比较出名的有微软的 [CodePush](https://github.com/microsoft/react-native-code-push)，[React Native 中文网的 pushy](https://pushy.reactnative.cn/)等。
 
-## 热更新
+## 热更新方案
 
 React Native 的热更新更像原生 App 的版本更新，需要实现一套完整的代码发布、管理、下载更新流程；
 
