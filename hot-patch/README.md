@@ -4,13 +4,27 @@
 
 热更新作为 React Native 的优势之一，相信很多人在选择使用 React Native 来开发应用，也是因为 React Native 具有的热更新特性。在热更新方案中，比较出名的有微软的 [CodePush](https://github.com/microsoft/react-native-code-push)，[React Native 中文网的 pushy](https://pushy.reactnative.cn/)等。
 
-## 热更新原理
+## 热更新
 
 React Native 的热更新并不像原生应用更新那么复杂，React Native 的热更新更像原生 App 的版本更新。
 
+服务器端实现版本代码的管理，包括添加、发布、环境切换、回滚、删除等功能；
+客户端实现版本代码获取，下载，app重启等功能；
+
+### 简要流程
+
+![热更新](https://www.pianshen.com/images/221/4263edf89398b0a32b52beab32cfda25.png)
+
+### 客户端流程
 用户每次打开 APP 客户端，在 APP 启动的过程中请求服务器获取最新 bundle 版本号，同时从本地获取当前已安装 APP 的 bundle 版本号，将两者进行对比，如若一致，则无需更新继续执行其他逻辑；如果不一致，从服务器获取当前最新版本的 bundle 包下载到本地。解压缩最新版本的 bundle 包（服务器端存放的 bundle 包一般均为压缩文件）。如果采用全量更新方法，解压缩之后的 bundle 文件可直接使用；如果使用的是差量更新方法，解压缩之后还需要与当前本地使用的 bundle 包进行合并，合并成功之后方可使用。
 
 ![热更新流程](https://upload-images.jianshu.io/upload_images/2262256-d7a4236da60fc89b.png)
+
+
+### 方案
+详细的代码发布、管理、部署的流程如下图：
+
+[![rgr9HI.md.png](https://s3.ax1x.com/2020/12/24/rgr9HI.md.png)](https://imgchr.com/i/rgr9HI)
 
 ## Pushy
 
@@ -35,12 +49,14 @@ React Native 的热更新并不像原生应用更新那么复杂，React Native 
 
 ### 优势
 
+- 除了服务器端代码，其他工具均开源且支持接入私有服务器
 - 支持私有服务器搭建[code-push-server](https://github.com/lisong/code-push-server)
 - [code-push](https://github.com/microsoft/code-push)开源的代码提交插件，(3.0 版本以下支持提交热更新代码到私有服务器)
 - [react-native-code-push](https://github.com/microsoft/react-native-code-push)开源的客户端热更新插件
 
 ### 劣势
 
+- 最新的代码仅实现与微软自己的服务器对接
 - 私有服务器源码为 nodejs 编写
 - 私有服务器源码有 1 年左右未维护(跨版本维护、增量更新功能需要二次开发)
 
