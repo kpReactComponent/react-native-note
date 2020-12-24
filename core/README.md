@@ -4,7 +4,7 @@ React Native 是一个使用React和应用平台的原生功能来构建 Android
 ## 视图（Views）与移动开发
 在 Android 和 iOS 开发中，一个视图是 UI 的基本组成部分：屏幕上的一个小矩形元素、可用于显示文本、图像或响应用户输入。甚至应用程序最小的视觉元素（例如一行文本或一个按钮）也都是各种视图。某些类型的视图可以包含其他视图。全部都是视图。
 
-![Android和iOS应用中多种视图的一些示例](./image01.svg)
+![Android和iOS应用中多种视图的一些示例](https://cdn.jsdelivr.net/gh/reactnativecn/react-native-website@gh-pages/docs/assets/diagram_ios-android-views.svg)
 
 ## React
 HTML编写的Web应用中有文档对象模型DOM。DOM通过对象的形式来展现结构化文档。对于Web开发者来说，文档即HTML代码，DOM又称作HTML DOM，HTML的元素在DOM中叫节点。Web浏览器负责处理DOM的具体实现，并提供API接口以便对DOM进行遍历和修改。这样我们就能用JavaScript和CSS与DOM交互，比如查找节点并修改内容、移除节点、插入新节点。无论何时想要动态改变网页内容，只要通过API接口修改DOM即可（如今的DOM API几乎实现了跨平台和跨浏览器的兼容性）。
@@ -19,16 +19,16 @@ React Native允许开发者通过JavaScript函数的代理，直接调用原生�
 从性能角度上分析，React Native把所有应用代码和业务逻辑从主线程转移到后台线程运行。它可以批量处理要原生执行的请求，等控制权转让给主线程时再异步执行。React Native会分析你的UI，将最少的数据传给主线程（又称UI线程）以便用原生组件进行渲染。
 
   
-![React Native 工作原理](./image03.jpg)
+![React Native 工作原理](https://pic4.zhimg.com/80/v2-990aa3a1c34a8e1b956baaa00b4ca9db_1440w.jpg)
 
 ## React Native框架构成以及与原生交互通信
 React Native 框架内部已提供了很多的内置组件，同时也提供了供编写与原生平台交互的接口。
-![React Native 框架构成](./image02.jpg)
+![React Native 框架构成](https://pic2.zhimg.com/80/v2-2bf84ece7deae66b28515b442240cd7d_1440w.jpg)
 
 
 在与原生框架通信中，如下图所示，React Native 采用了 JavaScriptCore 作为 JS VM，中间通过 JSON 文件与 Bridge 进行通信。而如果在使用 Chrome 浏览器进行调试时，那么所有的 JavaScript 代码都将运行在 Chrome 的 V8 引擎中，与原生代码通过 WebSocket 进行通信。
 
-![React Native 与原生平台的通信](./image04.jpg)
+![React Native 与原生平台的通信](https://pic4.zhimg.com/80/v2-60eb566b812a49fa945e802abe8dd453_1440w.jpg)
 
 ---
 ## 参考
