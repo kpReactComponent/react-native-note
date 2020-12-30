@@ -5,3 +5,4 @@ React Native技术资料、方案
 
 - [React Native原理](./core/README.md)
 - [React Native热更新方案](./hot-patch/README.md)
+- [React Native拆包](./multibundler/README.md)
